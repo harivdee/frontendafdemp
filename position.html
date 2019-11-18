@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS position</title>
+    <style>
+        body {
+            padding: 0%;
+            margin: 0%;
+        }
+
+        .box {
+            background-color: cadetblue;
+            padding: 10px;
+            width: 35%;
+            position: relative;
+            left: 0%;
+            top: 0px;
+            transition: all 1s ease;
+        }
+
+        .box2 {
+            transition: all 3s ease;
+        }
+
+        .box2:hover {
+            background-color: darkgreen;
+            height: 50px;
+            width: 70%;
+        }
+        input:checked + .box {
+            top: 40px;
+            left: 20px;
+            background-color: darksalmon;
+        }
+        section {
+            border: 3px dashed papayawhip;
+            position: relative;
+        }
+
+        section p {
+            background-color: rebeccapurple;
+            width: 45%;
+        }
+
+        #one {
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin: 0;
+        }
+        .cookie {
+            background-color: sienna;
+            width: 10%;
+            padding: 20px;
+            position: fixed;
+            bottom: 0%;
+            right: 0%;
+        }
+
+        input:checked + #visibility {
+            background-color: teal;
+            visibility: hidden;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h3 id="">Visibility</h3>
+        <label for="visibility"> yo </label>
+        <input type="checkbox" id="visibility">
+    <h3>position absolute</h3>
+    <div class="cookie">
+        Cookie?
+    </div>
+        <section>
+            <p id="one">paragraph 1</p>
+            <p>paragraph 2</p>
+        </section>
+    <h3>position relative</h3>
+    <label for="move">Move</label>
+    <input type="checkbox" id="move">
+    <div class="box"> Box </div>
+    <div class="box2">Bigger Box</div>
+</body>
+
+</html>

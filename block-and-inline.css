@@ -1,0 +1,9 @@
+
+* {
+    border: 1px solid black;
+}
+div{
+    background-color: coral;
+    width: 25%;
+    height: auto;
+}

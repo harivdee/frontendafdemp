@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .parent {
+            border: 1px solid lightsteelblue;
+        }
+        .parent p {
+            background-color: orangered;
+        }
+        .parent p strong, .box {
+            text-transform: uppercase;
+        }
+        .first > div {
+            text-decoration: line-through;
+        }
+        .firstsection{
+            color: red;
+        }
+        .parent ~ .box {
+            background-color: slateblue;
+        }
+
+        .first {
+            background-color: springgreen;
+        }
+
+        input [type="text"] {
+            background-color: teal;
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter name" value="User">
+    <input type="text" placeholder="Enter password" value="password">
+
+    <div class="top">
+        Top Artists
+    </div>
+    <div class="top">
+        Top Places
+    </div>
+    <div class="top">
+        Top Songs
+    </div>
+    <div class="container">
+        <div class="top"> Top Insider Information</div>
+    </div>
+    <div class="parent">
+        <p class="child">One
+            <strong>More</strong>
+        </p>
+        <p class="child">Two</p>
+        <p class="child">Three</p>
+    </div>
+    <p class="box">Outside parent</p>
+    <div class="first">
+        <div>Second A</div>
+        <div>Second B</div>
+        <section>Second C
+            <div>Third A</div>
+            <div>Third B</div>
+        </section>
+    </div>
+</body>
+
+</html>

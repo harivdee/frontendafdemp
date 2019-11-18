@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MySQL Tables</title>
+    <style>
+        /* selector { rule : value; } */
+        h1 {
+            background-color:thistle;
+            color: midnightblue;
+            /*0123456789ABCDEF  00 - ff= 00 - 255*/
+            background: #00FF00;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+        section {
+            padding:0px 15px 0px 15px;
+            background-color: coral;
+            margin-bottom: 20px;
+        }
+        table{
+            background-color: white;
+            text-align: left;
+            border: 2px solid black;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .table-title {
+            background-color: cadetblue;
+        }
+        thead {
+
+        }
+        tfoot {
+            background-color: darkgray;
+        }
+
+        td , th {
+            padding: 1px 5px;
+            border: 1px solid black;
+        }
+        td {
+            padding: 2px 12px;
+        }        
+    </style>
+</head>
+
+<body>
+    <h1>Database Layout</h1>
+    <h2>sql commands and tables</h2>
+    <section>
+        <h3>Customer Table</h3>
+        <br>
+        <pre>
+                create table customer(
+                    ccode int unsigned auto_increment,
+                    cname varchar(20) not null,
+                    primary key (ccode)
+                );
+            </pre>
+        <table>
+            <thead>
+                <tr class="table-title">
+                    <th colspan="2">customer</th>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ccode<strong> PK</strong></td>
+                    <td>int unsigned</td>
+                </tr>
+                <tr>
+                    <td>cname</td>
+                    <td>varchar(20)</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="2">indexes</th>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+    <br>
+    <section>
+        <h3>Salesman Table</h3>
+        <br>
+        <pre>
+                    create table salesman(
+                        scode int unsigned not null,
+                        sname varchar(20) not null,
+                        scity varchar(15) null,
+                        scomm decimal(5,2) unsigned null,
+                        primary key (scode)
+                        );
+                        ALTER TABLE salesman
+                        MODIFY COLUMN scode int unsigned auto_increment;
+        </pre>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">salesman</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Type</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>scode <strong> PK</strong></td>
+                    <td>int unsigned</td>
+                </tr>
+                <tr>
+                    <td>sname</td>
+                    <td>varchar(20)</td>
+                </tr>
+                <tr>
+                    <td>scity</td>
+                    <td>varchar(15)</td>
+                </tr>
+                <tr>
+                    <td>scomm</td>
+                    <td>dec(5,2)</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="2">indexes</th>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+</body>
+
+</html>
