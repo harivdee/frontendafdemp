@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <style>
+        article {
+            border: 1px solid coral;
+            width: 24%;
+            height: 250px;
+            display: inline-block;
+            padding: 10px;
+            box-sizing: border-box;
+            vertical-align: bottom;
+            background-color: crimson;
+            color: cyan;
+            font: bolder;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <a href="https://cdn.drawception.com/images/panels/2015/1-6/9s7jBKqLY7-2.png">Click me</a> -->
+
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+
+
+    <script>
+        function init() {
+
+            function displayProduct(item, index) {
+                // item.name;
+                // console.log((index + 1) + ' ' + item.name);
+                // const article = document.createElement('article');
+                const article = $('<article/>');
+                // console.log(article);
+                // const p = document.createElement('p');
+                const p = $('<p/>');
+                // p.innerHTML = 'Name: ' + item.name + ' | Price: <mark>' + item.price + '</mark>';
+                p.html('Name: ' + item.name + ' | Price: <mark>' + item.price + '</mark>');
+                // console.log(p);
+                // const img = document.createElement('img');
+                const img = $('<img/>');
+                // console.log(img)
+                // img.setAttribute('src', item.imgUrl);
+                img.attr('src', item.imgUrl);
+                // img.setAttribute('alt', item.name);
+                img.attr('alt', item.name);
+                // img.setAttribute('width', 100);
+                img.attr('width', 100);
+                // article.appendChild(p);
+                $(article).append(p);
+                // article.appendChild(img);
+                $(article).append(img);
+                // console.log(article);
+                // document.body.appendChild(article);
+                $(document.body).append(article);
+            };
+
+            const URL = "https://api.myjson.com/bins/bihjy";
+
+            const options = {
+                url: URL,
+                success: handleSuccess,
+                error: handleError
+            }
+
+            function handleSuccess(data) {
+                result = data;
+                // console.log('success', data);
+                // result.forEach(displayProduct);
+                $.each(result, function (k, v) {
+                    displayProduct(result[k] , v)
+                });
+                // // $.each(result,displayProduct);
+            }
+
+            function handleError(any) {
+                console.log('ERROR', any);
+            }
+
+            $.ajax(options);
+            // products.forEach(displayProduct);
+        }
+        $(init);
+    </script>
+</body>
+
+</html>

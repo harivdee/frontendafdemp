@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Events</title>
+    <style>
+        input {
+            /* zoom: 2.0; */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>2019 Live Events</h1>
+    <button>click here</button>
+    <br>
+    <a href="www.pinterest.com" target="_blank">Pinterest</a>
+    <p id="output"> </p>
+    <hr>
+    <form action="">
+        <label for="username">User: </label>
+        <input minlength="5" maxlength="10" id="username" type="text" name="username" required
+            placeholder="Enter username..">
+        <br>
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" required placeholder="Enter email..">
+        <br>
+        <input type="submit" value="received">
+        <input type="password" name="password" id="password" required placeholder="Enter password..">
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('form', handleSubmit);
+        const username = document.querySelector('#username');
+        const password = document.querySelector('#password');
+
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            if (
+                password.value.indeOf(username.value) > -1
+            ) {
+                console.error("Password is bad mkay");
+                return false;
+            }
+            form.submit();
+        }
+
+        const inputs = document.querySelectorAll('input');
+
+        // function handlefocus() {
+        //     input.forEach((input) =>
+        //         input.sytle.zoom = 2.0)
+        // }   
+
+        inputs.forEach((input) => {
+            input.addEventListener('click', () => {
+                input.style.zoom = 2.0;
+            });
+        });
+
+        // input.addEventListener('click',handlefocus);
+
+        form.addEventListener('submit', handleSubmit);
+
+        const link = document.querySelector('a');
+        const button = document.querySelector('button');
+        button.addEventListener('dblclick', handler);
+        button.addEventListener('contextmenu', handler);
+        link.addEventListener('click', handler);
+        function handler(event) {
+            console.log(event);
+            // event.preventDefault();
+            document.querySelector('#output').innerText = 'Event: ' + event.type;
+        }
+
+    </script>
+</body>
+
+</html>

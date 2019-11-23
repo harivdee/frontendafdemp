@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jay son </title>
+</head>
+<body>
+    <h1>JSON</h1>
+    <script>
+        // CLIENT:
+        const profile = {
+            name : 'Lee Scott',
+            age : 31,
+            married : false,
+            courses: ['Jaba','UrSQL']
+        };
+
+        const profileJSON = JSON.stringify(profile);
+
+        // SERVER
+        const receivedData = profileJSON;
+        const data = JSON.parse( receivedData);
+        data.show = function(){alert();}
+        data.courses.push('JavaScript');
+        const dataJSON = JSON.stringify(data);
+
+        // FUNCTION RETURN JSON
+
+    </script>
+</body>
+</html>

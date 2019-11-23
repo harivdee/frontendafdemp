@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JAY QUEERY</title>
+</head>
+
+<body>
+    <h1>jQuery</h1>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+
+    <script>
+        function init() {
+            // const title = document.querySelector('h1');
+            // title.innerText = 'Johannesburg';
+            // VANILLA
+            const title = $('h1');
+            title.text('Johannesburg');
+            // console.log(title);
+            // console.log(title.html());
+            $('p').css('background-color','orange').text("All in the family");
+
+            const items = $('.item');
+
+            $('#first').text('first').fadeOut(16000);
+
+            $('p').eq(1).text("Second").fadeOut(6000); //eq(1) targets the second paragraph 0,1
+
+            $(title).click(function(e) {
+                console.log(e.type,typeof e.type);
+                $('p').eq(1).fadeIn(2000);
+            });
+            let cambodia;
+            console.log(1);
+            console.log(2);
+            const URL = "https://restcountries.eu/rest/v2/name/cambodia";
+            function handleSuccess(data,status) {
+                console.log('success',data);
+                console.log('status',status);
+                cambodia = JSON.stringify(data);
+                // console.log(cambodia);
+                document.write(cambodia);
+            };
+
+            function handleError(any) {
+                console.log('fail',any)
+            }
+
+            const options = {
+                url : URL,
+                success : handleSuccess,
+                error : handleError
+            };
+            $.ajax(options);
+            console.log(3);
+            console.log(4);
+        }
+        $(init);
+        //  $( function(){});
+    </script>
+    <p id="first">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta cum officiis eaque quam repellat perferendis totam
+        optio accusamus ipsam, laborum repellendus vitae magnam esse dignissimos. Tenetur blanditiis commodi ab eos.</p>
+    <p id="second">End of HTML</p>
+    <!-- DOM CONTENT LOADED -->
+</body>
+
+</html>

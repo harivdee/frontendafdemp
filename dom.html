@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM</title>
+</head>
+
+<body>
+    <h1 id="title">DataOrientedModel</h1>
+    <p id="post">
+        <strong>Post Title:</strong> Aboout DOM Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
+        beatae! Deserunt delectus esse corrupti quam similique temporibus voluptatibus nam explicabo aut nesciunt quis
+        quo, maiores distinctio placeat qui veniam molestiae?
+    </p>
+
+    <ul>
+        <li class="item">Can</li>
+        <li class="item">AND</li>
+        <li class="item">Will</li>
+    </ul>
+
+    <div class="box"></div>
+    <img src="img/fresh.jpg" alt="">
+
+    <script>
+        const willSmith = document.querySelector('img');
+        willSmith.style.position = 'relative';
+
+
+        const items = document.querySelectorAll("li.item");
+        console.log(items);
+        // [ArrayLike[Array].forEach(FUNCTION);
+        function changeItem( parameter ) {
+            parameter.style.border = '1px dashed purple';
+            parameter.style.borderWidth = Math.round(Math.random()*20)+'px';
+            parameter.style.color = 'midnightblue';
+            parameter.style.fontSize = Math.round(Math.random()*100)+'px';;
+            console.log(parameter);
+        }
+
+        setInterval(items.forEach(changeItem),2222);
+
+
+        const box = document.querySelector(".box");
+        box.style.height = '100px';
+        box.style.width = '25%';
+        box.style.backgroundColor = 'magenta';
+        box.style.position = 'relative';
+        box.style.transition = 2000;
+        let step = 0;
+
+        function move() {
+            willSmith.style.left = step + 'px';
+            box.style.left = step+'px';
+            step += 10;
+        }
+
+        setInterval(move,100);
+
+        const ul = document.querySelector("ul");
+        ul.style.backgroundColor = "cadetblue";
+        console.log(ul.style.backgroundColor);
+
+        function changefont() {
+            ul.style.fontWeight = 'bolder';
+            ul.style.color = 'coral';
+            ul.style.transition = 1000;
+        }
+
+        setTimeout(changefont,5000);
+
+        const title = document.getElementById('title');
+        let text = title.innerText;
+        text = "What the duche?"
+        console.log(text);
+
+        const post = document.getElementById('post');
+        console.log(post.innerText);
+        document.write(post.innerText + '<br>');
+        post.innerHTML = '<mark>Changed</mark><br>';
+        document.write(post.innerHTML);
+    </script>
+</body>
+
+</html>

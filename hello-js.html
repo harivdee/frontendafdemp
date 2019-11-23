@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS bruh</title>
+</head>
+
+<body>
+    <h1 onclick="alert('Achtung!');">Hello js</h1>
+
+    <script src="hello-js.js"></script>
+    <script>
+        function primitives() {
+            console.log("what goes around");
+            let num = 4;
+            let str = "String";
+            let boo = true;
+            console.log(typeof boo);
+            console.log(typeof str);
+            console.log(typeof num);
+            const dob = 1986;
+            let password = 4567;
+        }
+        function arrays() {
+            console.log("arrays");
+            let lang = [false , primitives(),"java"];
+            console.log(lang);
+            console.log(lang[1]);
+            console.log(lang.length);
+            console.log(primitives.length);
+            lang.push("albino rat","pizza rat");
+            lang.pop();
+            console.log("Arrays",lang);
+            lang.push("pizza rat");
+            lang.shift();
+            lang.shift();
+            console.log(lang);
+            lang.unshift("trash");
+            lang.unshift("straight");
+            lang.unshift("is");
+            lang.unshift("javascript");
+            lang[3] = "magic";
+            lang.push("38");
+            console.log(lang);
+            // document.write(lang);
+            lang.length;
+            lang[7]+=5;
+            console.log(lang);
+            for(let counter = 0; counter<lang.length;counter++) {
+                console.log(counter+1+lang[counter]);
+                document.write("<em>"+
+                    lang[counter]+"</em>"
+                    );
+            }
+        }
+        function implicitCoersion() {
+        const strA = "Hello";
+        const numA = 5.5;
+        console.log(strA +" "+ numA);
+        const numB = 4.5;
+        console.log(numA + numB);
+        }
+        function explicitCoersion(){
+            let str ="wow";
+            let num = 22;
+            let float = 3.87;
+            let bool = false;
+            console.log(String(bool));
+            console.log(Number(bool));
+            console.log(Boolean(str));
+            console.log(parseInt(float));
+            console.log(parseInt("911")+5);
+
+        }
+        function objects() {
+            const course = {};
+            course.lessons = [
+                "Trap Making","Animal Handling",
+                "Sling Shot","Flower Picking"
+            ];
+            console.log(course);
+            console.log(course.lessons.length);
+            const dict = {
+                "one":"1",
+                "two":"2",
+                "three":"3"
+            };
+            console.log(parseInt(dict.three));
+            let sum  = parseInt(course.lessons.length) + parseInt(dict.three) ;
+            console.log(sum);
+            console.log(dict['two']);
+            course['assignments'] = "gtfo";
+            console.log(course);
+
+            const user = {
+                firstname : "Mpampis",
+                lastname : "Verikokos",
+                showFullName : function(msg) {
+                    console.log(
+                        msg + " o "+ this.firstname + " " + this.lastname + " eimai." 
+                        );
+                }
+            };
+            user.showFullName("Ela mitso");
+        }
+        objects();
+    </script>
+</body>
+
+</html>

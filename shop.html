@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <style>
+        article {
+            border: 1px solid coral;
+            width: 24%;
+            height: 250px;
+            display: inline-block;
+            padding: 10px;
+            box-sizing: border-box;
+            vertical-align: bottom;
+            background-color: crimson;
+            color: cyan;
+            font:bolder;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- <a href="https://cdn.drawception.com/images/panels/2015/1-6/9s7jBKqLY7-2.png">Click me</a> -->
+
+    <script>
+        let products = [
+            {
+                "imgUrl": "https://guesseu.scene7.com/is/image/GuessEU/M63H24W7JF0-L302-ALTGHOST?wid=1500&fmt=jpeg&qlt=80&op_sharpen=0&op_usm=1.0,1.0,5,0&iccEmbed=0",
+                "name": "CHECK PRINT SHIRT",
+                "price": 110
+            },
+            {
+                "imgUrl": "https://guesseu.scene7.com/is/image/GuessEU/FLGLO4FAL12-BEIBR?wid=700&amp;fmt=jpeg&amp;qlt=80&amp;op_sharpen=0&amp;op_usm=1.0,1.0,5,0&amp;iccEmbed=0",
+                "name": "GLORIA HIGH LOGO SNEAKER",
+                "price": 91
+            },
+            {
+                "imgUrl": "https://guesseu.scene7.com/is/image/GuessEU/HWVG6216060-TAN?wid=700&amp;fmt=jpeg&amp;qlt=80&amp;op_sharpen=0&amp;op_usm=1.0,1.0,5,0&amp;iccEmbed=0",
+                "name": "CATE RIGID BAG",
+                "price": 94.5
+            },
+            {
+                "imgUrl": "http://guesseu.scene7.com/is/image/GuessEU/WC0001FMSWC-G5?wid=520&fmt=jpeg&qlt=80&op_sharpen=0&op_usm=1.0,1.0,5,0&iccEmbed=0",
+                "name": "GUESS CONNECT WATCH",
+                "price": 438.9
+            },
+            {
+                "imgUrl": "https://guesseu.scene7.com/is/image/GuessEU/AW6308VIS03-SAP?wid=700&amp;fmt=jpeg&amp;qlt=80&amp;op_sharpen=0&amp;op_usm=1.0,1.0,5,0&amp;iccEmbed=0",
+                "name": "'70s RETRO GLAM KEFIAH",
+                "price": 20
+            }
+        ];
+        
+        function displayProduct( item , index ) {
+            item.name;
+            console.log((index+1)+' '+item.name);
+            const article = document.createElement('article');
+            // console.log(article);
+            const p = document.createElement('p');
+            p.innerHTML = 'Name: '+ item.name + ' | Price: <mark>' + item.price + '</mark>' ;
+            // console.log(p);
+            const img = document.createElement('img');
+            // console.log(img)
+            img.setAttribute('src', item.imgUrl);
+            img.setAttribute('alt', item.name);
+            img.setAttribute('width',100);
+            article.appendChild(p);
+            article.appendChild(img);
+            console.log(article);
+            document.body.appendChild(article);
+        };
+
+        products.forEach(displayProduct);
+
+    </script>
+</body>
+
+</html>
